@@ -8,5 +8,10 @@ public interface LivroDAO {
 	
 	void atualizar(Livro u);
 	
+	Livro ler(int id);
+	
+	void deletar(int id);
+	
+	
 	
 }

@@ -5,13 +5,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Usuario {
-	public int id;
-    public String nome;	
-    public String email;
-    public int telef;
-    public int cpf;
-    public LocalDate dataCadastro;
-    public List<Emprestimo> emprestimo;
+	private int id;
+	private String nome;	
+	private String email;
+	private int telef;
+	private int cpf;
+	private LocalDate dataCadastro;
+	private List<Emprestimo> emprestimo;
 
     // Construtor completo
     public Usuario(int id, String nome, String email, int telef, int cpf, LocalDate dataCadastro) {
