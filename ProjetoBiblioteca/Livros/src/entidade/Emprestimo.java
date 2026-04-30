@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 public class Emprestimo {
 
+	private int idBiblioteca;
     private int idEmprestimo;
     private int idUsuario;
     private int idLivro;
@@ -15,8 +16,9 @@ public class Emprestimo {
     // Construtor completo
     public Emprestimo(int idEmprestimo, int idUsuario, int idLivro,
                       LocalDate dataEmprestimo, LocalDate dataPrevistaDevolucao,
-                      LocalDate dataDevolucao, String statusEmprestimo) {
-        this.idEmprestimo = idEmprestimo;
+                      LocalDate dataDevolucao, String statusEmprestimo, int idBiblioteca) {
+        this.idBiblioteca = idBiblioteca;
+    	this.idEmprestimo = idEmprestimo;
         this.idUsuario = idUsuario;
         this.idLivro = idLivro;
         this.dataEmprestimo = dataEmprestimo;
@@ -80,4 +82,12 @@ public class Emprestimo {
     public void setStatusEmprestimo(String statusEmprestimo) {
         this.statusEmprestimo = statusEmprestimo;
     }
+
+	public int getIdBiblioteca() {
+		return idBiblioteca;
+	}
+
+	public void setIdBiblioteca(int idBiblioteca) {
+		this.idBiblioteca = idBiblioteca;
+	}
 }

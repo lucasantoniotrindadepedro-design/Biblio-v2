@@ -2,7 +2,7 @@ package DAO;
 
 import entidade.Usuario;
 
-public class UsuarioImplDAO implements UsuarioDAO {
+public class UsuarioimplDAO implements UsuarioDAO {
 	
 	
 
@@ -10,11 +10,11 @@ public class UsuarioImplDAO implements UsuarioDAO {
 	public void salvar(Usuario u) {
 		String sql = "INSERT INTO usuario(id_usuario,nome,cpf,email,telefone,data_cadastro) VALUES(?,?,?,?,?,?)";
 		
-		sql = sql.replaceFirst("\\?", String.valueOf(u.nome) );
-		sql = sql.replaceFirst("\\?", "" + u.cpf + "" + "" + "");
-		sql = sql.replaceFirst("\\?",  ""  + "" + u.email + "" + "");
-		sql = sql.replaceFirst("\\?",   "" + "" + "" + u.telef + "");
-		sql = sql.replaceFirst("\\?", String.valueOf(u.dataCadastro));
+		sql = sql.replaceFirst("\\?", String.valueOf(u.getNome()) );
+		sql = sql.replaceFirst("\\?", "" + u.getCpf() + "" + "" + "");
+		sql = sql.replaceFirst("\\?",  ""  + "" + u.getEmail() + "" + "");
+		sql = sql.replaceFirst("\\?",   "" + "" + "" + u.getTelef() + "");
+		sql = sql.replaceFirst("\\?", String.valueOf(u.getDataCadastro()));
 
 	}
 
@@ -22,11 +22,11 @@ public class UsuarioImplDAO implements UsuarioDAO {
 	public void atualizar(Usuario u) {
 		String sql = "UPDATE TABLE usuario SET nome = ?, cpf = ?, email = ?, telefone = ? WHERE id_usuario = ? ";
 		
-		sql = sql.replaceFirst("\\?", String.valueOf(u.nome)); 
-		sql = sql.replaceFirst("\\?", String.valueOf("" + u.cpf + "" + "" + ""));
-		sql = sql.replaceFirst("\\?", String.valueOf("" + "" + u.email + "" + ""));
-		sql = sql.replaceFirst("\\?", String.valueOf("" + "" + "" + u.telef + ""));
-		sql = sql.replaceFirst("\\?", String.valueOf(u.id)); 
+		sql = sql.replaceFirst("\\?", String.valueOf(u.getNome())); 
+		sql = sql.replaceFirst("\\?", String.valueOf("" + u.getCpf() + "" + "" + ""));
+		sql = sql.replaceFirst("\\?", String.valueOf("" + "" + u.getEmail() + "" + ""));
+		sql = sql.replaceFirst("\\?", String.valueOf("" + "" + "" + u.getTelef() + ""));
+		sql = sql.replaceFirst("\\?", String.valueOf(u.getId())); 
 	}
 
 	@Override
@@ -39,7 +39,7 @@ public class UsuarioImplDAO implements UsuarioDAO {
 
 	@Override
 	public void deletar(int id) {
-		String sql = "DELETE FROM usuario WWHERE id_usuario=?";
+		String sql = "DELETE FROM usuario WHERE id_usuario=?";
 		sql = sql.replaceFirst("\\?", String.valueOf(id));
 	}
 

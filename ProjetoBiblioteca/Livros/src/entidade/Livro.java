@@ -13,8 +13,9 @@ public class Livro {
 	private List<Emprestimo> emprestimo;
 
     // Construtor completo
-    public Livro(String titulo, int paginas, String genero, String autor){
-        this.titulo = titulo;
+    public Livro(int id_livro, String titulo, int paginas, String genero, String autor){
+        this.id_livro = id_livro;
+    	this.titulo = titulo;
         this.paginas = paginas;
         this.genero = genero;
         this.autor = autor;

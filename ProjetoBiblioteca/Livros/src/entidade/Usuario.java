@@ -23,7 +23,10 @@ public class Usuario {
         this.dataCadastro = dataCadastro;
         this.emprestimo = new ArrayList<>();
     }
-    public List<Emprestimo> getEmprestimo(){
+    public Usuario() {
+		// TODO Auto-generated constructor stub
+	}
+	public List<Emprestimo> getEmprestimo(){
     	return this.emprestimo;
     }
 
@@ -71,4 +74,10 @@ public class Usuario {
     public void setDataCadastro(LocalDate dataCadastro) {
         this.dataCadastro = dataCadastro;
     }
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 }
