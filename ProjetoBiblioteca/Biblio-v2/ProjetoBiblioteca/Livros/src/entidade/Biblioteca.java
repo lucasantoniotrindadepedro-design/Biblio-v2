@@ -11,12 +11,24 @@ public class Biblioteca {
     private String telefone;
     private List<Livro> livros;
     // Construtor
+    
+    public Biblioteca() {
+    	
+    };
     public Biblioteca(int idBiblioteca, String nome, String endereco, String telefone) {
         this.idBiblioteca = idBiblioteca;
         this.nome = nome;
         this.endereco = endereco;
         this.telefone = telefone;
     }
+    
+    @Override
+    public String toString() {
+
+    	return "id=" + idBiblioteca +" nome=" + nome +" endereco=" + endereco +" telefone=" + telefone +"";
+    	
+    };
+    
     public List<Livro> getLivros(){
     	return this.livros;
     }

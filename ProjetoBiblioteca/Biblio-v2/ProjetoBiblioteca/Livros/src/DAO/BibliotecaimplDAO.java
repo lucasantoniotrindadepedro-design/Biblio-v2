@@ -38,16 +38,33 @@ public class BibliotecaimplDAO implements BibliotecaDAO {
 	
 
 	@Override
-	public void ler(int idBiblioteca) throws SQLException {
+	public Biblioteca ler(int idBiblioteca) throws SQLException {
 		Connection conn = DBConnection.getInstance().getConnection();
 		String sql = "SELECT * FROM biblioteca WHERE id_biblioteca = ?";
 		
 		PreparedStatement stmt = conn.prepareStatement(sql);
-		stmt.setString(1, String.valueOf(idBiblioteca));
+		stmt.setLong(1, idBiblioteca);
 		
-		ResultSet resul = stmt.executeQuery();
+		ResultSet rs = stmt.executeQuery();
 		
-		System.out.print(resul);
+		if(rs.next()) {
+			Biblioteca Biblioteca = new Biblioteca();
+			
+			Biblioteca.setNome(rs.getString("nome"));
+			Biblioteca.setEndereco(rs.getString("endereco"));
+			Biblioteca.setIdBiblioteca(rs.getInt("id_biblioteca"));
+			Biblioteca.setTelefone("telefone");
+			
+			System.out.print(Biblioteca.toString());
+			
+			return Biblioteca;	
+			
+			
+			
+		} else {
+			return null;
+		}
+		
 	}
 
 	@Override

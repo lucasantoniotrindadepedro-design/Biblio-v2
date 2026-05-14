@@ -9,7 +9,7 @@ public interface BibliotecaDAO {
 	
 	void atualizar(Biblioteca b) throws SQLException;
 	
-	void ler(int idBiblioteca) throws SQLException;
+	Biblioteca ler(int idBiblioteca) throws SQLException;
 	
 	void deletar(int idBiblioteca) throws SQLException;
 }

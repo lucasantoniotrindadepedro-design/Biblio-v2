@@ -9,10 +9,10 @@ import DAO.*;
 public class App {
 	public static void main(String[] args) throws SQLException {
 		
-	 Biblioteca bbTest = new Biblioteca(1,"Teste","Rua 1","7721963958");
+	 Biblioteca b = new Biblioteca(1,"Teste","Rua 1","7721963958");
 	 
-	 BibliotecaDAO bbTestDAO = new BibliotecaimplDAO();
+	 BibliotecaDAO bDAO = new BibliotecaimplDAO();
 	 
-	 bbTestDAO.salvar(bbTest);
+	 bDAO.ler(1);
 	};
 }
