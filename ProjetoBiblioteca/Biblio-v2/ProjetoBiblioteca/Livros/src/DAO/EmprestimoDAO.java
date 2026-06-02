@@ -1,16 +1,18 @@
 package DAO;
 
+import java.sql.SQLException;
+
 import entidade.Emprestimo;
 
 public interface EmprestimoDAO {
 
-	void salvar(Emprestimo e);
+	void salvar(Emprestimo e) throws SQLException;
 	
-	void atualizar(Emprestimo e);
+	void atualizar(Emprestimo e) throws SQLException;
 	
-	void ler(int id_emprestimo);
+	Emprestimo ler(int id_emprestimo) throws SQLException;
 	
-	void deletar(int id_emprestimo);
+	void deletar(int id_emprestimo) throws SQLException;
 	
 	
 }

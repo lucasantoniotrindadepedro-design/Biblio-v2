@@ -68,10 +68,12 @@ public class BibliotecaimplDAO implements BibliotecaDAO {
 	}
 
 	@Override
-	public void deletar(int idBiblioteca) {
+	public void deletar(int idBiblioteca) throws SQLException {
+		Connection conn = DBConnection.getInstance().getConnection();
 		String sql = "DELETE FROM biblioteca WHERE=?";
 		
-		sql = sql.replaceFirst("\\?", String.valueOf(idBiblioteca));
+		PreparedStatement stmt = conn.prepareStatement(sql);
+		stmt.setLong(1, idBiblioteca);
 	}
 
 }
