@@ -1,4 +1,4 @@
-# Sistema de Gerenciamento de Biblioteca
+# Sistema de Gerenciamento de Biblioteca - Fork por Júlio Miguel Candeias Machado e Lucas Antônio Trindade Pedro
 
 ## Descrição do Projeto
 
@@ -80,7 +80,7 @@ Essa organização garante consistência e evita redundância de dados.
 
 ---
 
-## Regras de Negócio
+## Regras de Negócio - (Não Implementado)
 
 O sistema implementa regras importantes para garantir seu funcionamento correto:
 
@@ -109,11 +109,6 @@ O sistema é dividido em classes que representam entidades do mundo real:
 * Biblioteca
 * Empréstimo
 
-### Responsabilidade das Classes
-
-Cada classe possui responsabilidades específicas, promovendo organização e reutilização de código.
-
----
 
 ## Banco de Dados
 
@@ -146,6 +141,14 @@ Esse modelo garante um fluxo consistente das operações do sistema.
 * Modelagem de Banco de Dados Relacional
 
 ---
+
+## Mudanças desse Fork
+
+* Padrão de projeto DAO
+* Padrão de projeto Singleton
+* Conexão com Banco de Dados
+* Refatoração de Classes 
+
 
 ## Considerações Finais
 
