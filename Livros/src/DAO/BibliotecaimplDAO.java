@@ -17,20 +17,20 @@ public class BibliotecaimplDAO implements BibliotecaDAO {
 		stmt.setString(4, String.valueOf(b.getTelefone()));
 		stmt.executeUpdate();
 		
-		System.out.println("Deu Certo salvar");
+	
 		conn.close();
 	}
 
 	@Override
 	public void atualizar(Biblioteca b) throws SQLException {
 		Connection conn = DBConnection.getInstance().getConnection();
-		String sql = "UPDATE TABLE biblioteca SET nome = ?,endereco = ?, telefone = ? WHERE id_biblioteca = ?";
+		String sql = "UPDATE biblioteca SET nome = ?,endereco = ?, telefone = ? WHERE id_biblioteca = ?";
 		
 		PreparedStatement stmt = conn.prepareStatement(sql);
 		stmt.setString(1, b.getNome());
 		stmt.setString(2, b.getEndereco());
-		stmt.setString(3, String.valueOf(b.getTelefone()));
-		stmt.setString(4, String.valueOf(b.getIdBiblioteca()));
+		stmt.setString(3, b.getTelefone());
+		stmt.setLong(4, b.getIdBiblioteca());
 		stmt.executeUpdate();
 		
 	}
@@ -55,7 +55,7 @@ public class BibliotecaimplDAO implements BibliotecaDAO {
 			Biblioteca.setIdBiblioteca(rs.getInt("id_biblioteca"));
 			Biblioteca.setTelefone("telefone");
 			
-			System.out.print(Biblioteca.toString());
+			System.out.println(Biblioteca.toString());
 			
 			return Biblioteca;	
 			

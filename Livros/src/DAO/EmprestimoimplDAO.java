@@ -27,7 +27,7 @@ public class EmprestimoimplDAO implements EmprestimoDAO {
 	@Override
 	public void atualizar(Emprestimo e) throws SQLException {
 		Connection conn = DBConnection.getInstance().getConnection();
-		String sql = "UPDATE TABLE emprestimo SET id_emprestimo = ?, id_usuario = ?, id_livro = ?, id_biblioteca = ?, data_emprestimo = ?, data_prevista_devolucao = ?, data_devolucao = ?, status_emprestimo = ?";
+		String sql = "UPDATE emprestimo SET id_emprestimo = ?, id_usuario = ?, id_livro = ?, id_biblioteca = ?, data_emprestimo = ?, data_prevista_devolucao = ?, data_devolucao = ?, status_emprestimo = ?";
 		
 		PreparedStatement stmt = conn.prepareStatement(sql);
 		
@@ -69,7 +69,7 @@ public class EmprestimoimplDAO implements EmprestimoDAO {
 			e.setDataEmprestimo(rs.getDate("data_emprestimo"));
 			e.setStatusEmprestimo(rs.getString("status_emprestimo"));
 			
-			System.out.print(e.toString());
+			System.out.println(e.toString());
 			
 			return e;	
 			

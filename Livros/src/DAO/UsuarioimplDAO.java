@@ -27,7 +27,7 @@ public class UsuarioimplDAO implements UsuarioDAO {
 	@Override
 	public void atualizar(Usuario u) throws SQLException {
 		Connection conn = DBConnection.getInstance().getConnection();
-		String sql = "UPDATE TABLE usuario SET nome = ?, cpf = ?, email = ?, telefone = ? WHERE id_usuario = ? ";
+		String sql = "UPDATE usuario SET nome = ?, cpf = ?, email = ?, telefone = ? WHERE id_usuario = ? ";
 		
 		PreparedStatement stmt = conn.prepareStatement(sql);
 		stmt.setString(1, u.getNome());
@@ -62,7 +62,7 @@ public class UsuarioimplDAO implements UsuarioDAO {
 			Usuario.setTelef(rs.getInt("telefone"));
 			
 			
-			System.out.print(Usuario.toString());
+			System.out.println(Usuario.toString());
 			
 			return Usuario;	
 			
