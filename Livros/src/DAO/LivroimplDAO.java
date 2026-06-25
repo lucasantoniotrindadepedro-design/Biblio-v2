@@ -57,6 +57,8 @@ public class LivroimplDAO implements LivroDAO {
 			l.setStatus(rs.getString("status"));
 			l.setTitulo(rs.getString("título"));
 			
+			System.out.println(l.toString());
+			
 			return l;
 			
 		} else {
