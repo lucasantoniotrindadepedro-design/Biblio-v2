@@ -12,6 +12,20 @@ public class Emprestimo {
     private Date dataPrevistaDevolucao;
     private Date dataDevolucao;
     private String statusEmprestimo;
+    
+    @Override
+    public String toString() {
+        return "Emprestimo{" +
+                "idBiblioteca=" + idBiblioteca +
+                ", idEmprestimo=" + idEmprestimo +
+                ", idUsuario=" + idUsuario +
+                ", idLivro=" + idLivro +
+                ", dataEmprestimo=" + dataEmprestimo +
+                ", dataPrevistaDevolucao=" + dataPrevistaDevolucao +
+                ", dataDevolucao=" + dataDevolucao +
+                ", statusEmprestimo='" + statusEmprestimo + '\'' +
+                '}';
+    }
 
     // Construtor completo
     public Emprestimo(int idBiblioteca, int idEmprestimo, int idUsuario,int idLivro,Date dataEmprestimo,Date dataPrevistaDevolucao,Date dataDevolucao,String statusEmprestimo) {

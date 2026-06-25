@@ -12,6 +12,20 @@ public class Livro {
     private String autor;
     private int id_biblioteca;
 	private List<Emprestimo> emprestimo;
+	
+	@Override
+	public String toString() {
+	    return "Livro{" +
+	            "id_livro=" + id_livro +
+	            ", titulo='" + titulo + '\'' +
+	            ", paginas=" + paginas +
+	            ", status='" + status + '\'' +
+	            ", genero='" + genero + '\'' +
+	            ", autor='" + autor + '\'' +
+	            ", id_biblioteca=" + id_biblioteca +
+	            ", emprestimo=" + emprestimo +
+	            '}';
+	}
 
     // Construtor completo
     public Livro(int id_livro, String titulo, int paginas, String genero, String autor){

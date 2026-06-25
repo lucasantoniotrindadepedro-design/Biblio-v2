@@ -14,6 +14,19 @@ public class Usuario {
 	private Date dataCadastro;
 	private List<Emprestimo> emprestimo;
 
+	@Override
+	public String toString() {
+	    return "Usuario{" +
+	            "id=" + id +
+	            ", nome='" + nome + '\'' +
+	            ", email='" + email + '\'' +
+	            ", telef=" + telef +
+	            ", cpf=" + cpf +
+	            ", dataCadastro=" + dataCadastro +
+	            ", emprestimo=" + emprestimo +
+	            '}';
+	}
+	
     // Construtor completo
     public Usuario(int id, String nome, String email, int telef, int cpf, Date dataCadastro) {
     	this.id = id;
